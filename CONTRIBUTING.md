@@ -76,4 +76,4 @@ Tipos habituales: `feat`, `fix`, `docs`, `refactor`, `test`, `ci`, `chore`.
 
 ## Código de conducta
 
-Sé respetuoso y constructivo. Se espera un trato cordial con el resto de personas que participan; los comentarios hostiles o discriminatorios no se toleran y pueden acabar en el bloqueo de la cuenta.
+Participar en este proyecto implica aceptar el [Código de Conducta](./CODE_OF_CONDUCT.md). Los incumplimientos se reportan a [hello@markox.dev](mailto:hello@markox.dev).

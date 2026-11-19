@@ -267,7 +267,7 @@ Las contribuciones son bienvenidas.
 2. Asegúrate de que `pnpm lint` y `pnpm typecheck` pasan en lo que toques.
 3. Abre una Pull Request describiendo el cambio y el motivo.
 
-Para cambios grandes, abre antes un issue para discutirlo.
+Para cambios grandes, abre antes un issue para discutirlo. Este proyecto sigue un [Código de Conducta](./CODE_OF_CONDUCT.md).
 
 ## Licencia
 
