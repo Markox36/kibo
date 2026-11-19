@@ -248,7 +248,7 @@ La web (`apps/web`) es estática y se despliega en cualquier hosting (hay un `ve
 - Helmet, CORS y rate limiting en la API; CSP estricta en la app de escritorio.
 - Borrado de cuenta (`DELETE /me`) que revoca Google y elimina todos los datos.
 
-¿Has encontrado una vulnerabilidad? **No abras un issue público**: escribe a [hello@markox.dev](mailto:hello@markox.dev).
+¿Has encontrado una vulnerabilidad? **No abras un issue público**: sigue la [política de seguridad](./SECURITY.md).
 
 ## Hoja de ruta
 
@@ -263,7 +263,7 @@ La web (`apps/web`) es estática y se despliega en cualquier hosting (hay un `ve
 
 Las contribuciones son bienvenidas.
 
-1. Haz un fork y crea una rama (`git checkout -b feat/mi-cambio`).
+1. Haz un fork y crea una rama (`git checkout -b feat/mi-cambio`). Lee antes la [guía de contribución](./CONTRIBUTING.md).
 2. Asegúrate de que `pnpm lint` y `pnpm typecheck` pasan en lo que toques.
 3. Abre una Pull Request describiendo el cambio y el motivo.
 
