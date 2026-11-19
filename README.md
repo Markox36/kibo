@@ -237,7 +237,9 @@ docker compose up -d --build
 
 Expone el puerto `3000` con healthcheck en `/health`. MongoDB no se incluye en el compose: usa Atlas o tu propia instancia.
 
-La web (`apps/web`) es estática y se despliega en cualquier hosting (hay un `vercel.json` de referencia). Las releases de escritorio se generan con el workflow `release.yml` (tauri-action) para Linux, macOS y Windows.
+¿Sin servidor propio? Puedes alojarlo **gratis en Vercel + MongoDB Atlas**: guía en [docs/deploy-vercel.md](./docs/deploy-vercel.md) (la API incluye función serverless y `vercel.json`).
+
+La web (`apps/web`) es estática y se despliega en cualquier hosting. Las releases de escritorio se generan con el workflow `release.yml` (tauri-action) para Linux, macOS y Windows.
 
 ## Seguridad
 

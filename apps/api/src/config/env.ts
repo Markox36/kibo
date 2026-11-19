@@ -3,6 +3,11 @@ import { z } from 'zod';
 const EnvSchema = z.object({
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
   PORT: z.coerce.number().int().positive().default(3000),
+  // 'true' behind a reverse proxy / Vercel so rate limiting sees the real client IP.
+  TRUST_PROXY: z
+    .enum(['true', 'false'])
+    .default('false')
+    .transform((v) => v === 'true'),
   API_PUBLIC_URL: z.string().url().default('http://localhost:3000'),
   WEB_ORIGIN: z.string().default('http://localhost:5173'),
 

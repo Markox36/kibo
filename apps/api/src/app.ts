@@ -24,6 +24,7 @@ export async function buildApp(opts: BuildOptions = {}): Promise<FastifyInstance
   const env = opts.env ?? loadEnv();
 
   const app = Fastify({
+    trustProxy: env.TRUST_PROXY,
     logger:
       env.NODE_ENV === 'production'
         ? { level: 'info' }
