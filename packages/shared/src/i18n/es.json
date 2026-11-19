@@ -1,0 +1,89 @@
+{
+  "app": {
+    "name": "Kibo",
+    "tagline": "Tu día, claro."
+  },
+  "nav": {
+    "today": "Hoy",
+    "calendar": "Calendario",
+    "tasks": "Tareas",
+    "inbox": "Inbox",
+    "categories": "Categorías",
+    "settings": "Ajustes"
+  },
+  "actions": {
+    "create": "Crear",
+    "createTask": "Nueva tarea",
+    "createEvent": "Nuevo evento",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "restore": "Restaurar",
+    "archive": "Archivar",
+    "search": "Buscar",
+    "commandPalette": "Abrir paleta de comandos"
+  },
+  "toasts": {
+    "taskCreated": "Listo, tarea creada.",
+    "eventCreated": "Listo, evento creado.",
+    "synced": "Todo sincronizado.",
+    "offline": "No hay conexión. Seguimos en local.",
+    "syncFailed": "No se pudo sincronizar. Tus cambios siguen guardados en este dispositivo.",
+    "verifyEmail": "Verifica tu email para activar la sincronización.",
+    "encryptionUnavailable": "No se pudo activar el cifrado automático de backups. Puedes seguir usando backups locales sin cifrar o configurar una contraseña manual."
+  },
+  "task": {
+    "status": {
+      "inbox": "Inbox",
+      "pending": "Pendiente",
+      "in_progress": "En progreso",
+      "blocked": "Bloqueada",
+      "done": "Hecha",
+      "cancelled": "Cancelada"
+    },
+    "priority": {
+      "low": "Baja",
+      "medium": "Media",
+      "high": "Alta"
+    },
+    "energy": {
+      "low": "Baja",
+      "medium": "Media",
+      "high": "Alta"
+    },
+    "dueDate": "Fecha límite",
+    "plannedDate": "Fecha planificada",
+    "estimatedMinutes": "Duración estimada",
+    "subtasks": "Subtareas"
+  },
+  "timeBlock": {
+    "morning": "Mañana",
+    "afternoon": "Tarde",
+    "night": "Noche"
+  },
+  "reminder": {
+    "none": "Ninguno",
+    "at_time": "A la hora",
+    "5m_before": "5 min antes",
+    "15m_before": "15 min antes",
+    "1h_before": "1 hora antes",
+    "1d_before": "1 día antes"
+  },
+  "onboarding": {
+    "welcome": "Bienvenido a Kibo.",
+    "namePrompt": "¿Cómo te llamas?",
+    "categoriesPrompt": "Elige las categorías que usarás.",
+    "loginPrompt": "¿Quieres iniciar sesión para sincronizar entre dispositivos?",
+    "noInternet": "Sin conexión. Continuando en modo local."
+  },
+  "categoriesDefault": {
+    "personal": "Personal",
+    "work": "Trabajo",
+    "home": "Casa",
+    "studies": "Estudios",
+    "health": "Salud",
+    "servers": "Servidores",
+    "shopping": "Compras",
+    "finance": "Finanzas"
+  }
+}

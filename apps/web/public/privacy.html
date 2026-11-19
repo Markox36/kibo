@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Política de Privacidad · Kibo</title>
+    <meta name="robots" content="index, follow" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff;
+        --fg: #1a1a1a;
+        --muted: #555;
+        --accent: #4f46e5;
+        --border: #e5e5e5;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0b0b10;
+          --fg: #eaeaea;
+          --muted: #a0a0a8;
+          --accent: #8b83ff;
+          --border: #23232b;
+        }
+      }
+      html, body { background: var(--bg); color: var(--fg); }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 2.5rem 1.25rem 5rem;
+      }
+      h1 { font-size: 2rem; margin-bottom: 0.25rem; }
+      h2 { font-size: 1.35rem; margin-top: 2.25rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
+      h3 { font-size: 1.1rem; margin-top: 1.5rem; }
+      p, li { color: var(--fg); }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      code { background: rgba(127,127,127,0.15); padding: 0.1em 0.35em; border-radius: 4px; font-size: 0.9em; }
+      .muted { color: var(--muted); font-size: 0.95rem; }
+      .callout {
+        border-left: 3px solid var(--accent);
+        background: rgba(127,127,127,0.08);
+        padding: 0.85rem 1rem;
+        border-radius: 6px;
+        margin: 1.25rem 0;
+      }
+      ul { padding-left: 1.25rem; }
+      li { margin: 0.25rem 0; }
+      footer { margin-top: 3rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Política de Privacidad de Kibo</h1>
+    <p class="muted">Última actualización: 6 de julio de 2026</p>
+
+    <p>
+      Esta Política de Privacidad describe cómo <strong>Kibo</strong> ("Kibo", "la app", "nosotros")
+      recoge, usa, almacena y protege la información personal de sus usuarios ("tú", "usuario") cuando
+      utilizan la aplicación web (<a href="https://kibo.markox.dev">https://kibo.markox.dev</a>) o
+      cualquiera de sus versiones de escritorio (Linux, macOS y Windows).
+    </p>
+
+    <p>
+      Kibo es un producto personal desarrollado por <strong>Markox</strong>
+      (contacto: <a href="mailto:hello@markox.dev">hello@markox.dev</a>).
+    </p>
+
+    <h2>1. Datos que recogemos</h2>
+
+    <h3>1.1 Datos de cuenta</h3>
+    <ul>
+      <li>Dirección de correo electrónico.</li>
+      <li>Nombre para mostrar (opcional).</li>
+      <li>Contraseña almacenada como <em>hash</em> con Argon2 (nunca en texto plano).</li>
+      <li>Fecha de registro, fecha del último acceso y estado de verificación de email.</li>
+    </ul>
+
+    <h3>1.2 Datos de uso de la aplicación</h3>
+    <ul>
+      <li>Eventos, tareas, subtareas, categorías, etiquetas, notas del <em>inbox</em> y calendarios que tú creas.</li>
+      <li>Ajustes de la app: preferencias de notificaciones, presets de pomodoro, zoom, filtros del calendario.</li>
+      <li>Historial de sesiones de foco (pomodoro / timer) si decides guardarlas.</li>
+      <li>Elementos enviados a la papelera hasta que se purgan.</li>
+    </ul>
+
+    <h3>1.3 Datos técnicos</h3>
+    <ul>
+      <li>Dirección IP y <em>user agent</em> del navegador o cliente de escritorio en cada petición al API.</li>
+      <li><em>Refresh tokens</em> emitidos por Kibo, con rotación y detección de reuso.</li>
+      <li>Registros mínimos de errores del servidor (sin cuerpo de peticiones, sin contenido de tus datos).</li>
+    </ul>
+
+    <h3>1.4 Datos de Google (si conectas tu cuenta)</h3>
+    <p>
+      Si eliges iniciar sesión con Google o conectar Google Calendar, Kibo accede a los datos
+      autorizados a través de las <strong>Google API Services</strong> con los siguientes <em>scopes</em>:
+    </p>
+    <ul>
+      <li><code>openid</code>, <code>email</code>, <code>profile</code>: para identificarte y mostrar tu email y nombre.</li>
+      <li><code>https://www.googleapis.com/auth/calendar.readonly</code> y/o <code>https://www.googleapis.com/auth/calendar.events</code>: solo si activas la integración con Google Calendar, para leer y opcionalmente sincronizar tus eventos.</li>
+    </ul>
+    <p>Los datos concretos que Kibo puede obtener de Google son:</p>
+    <ul>
+      <li>Tu identificador Google, email y nombre público.</li>
+      <li>La lista de calendarios de tu cuenta.</li>
+      <li>Los eventos de los calendarios que decidas importar (título, descripción, fecha, hora, ubicación, invitados si están presentes, RRULE de recurrencia).</li>
+      <li><em>Access token</em> y <em>refresh token</em> de Google emitidos tras el OAuth 2.0 + PKCE.</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Cumplimiento con la Google API Services User Data Policy — Limited Use.</strong>
+      El uso que Kibo hace de la información recibida de las Google APIs se ajusta a la
+      <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noreferrer">Google API Services User Data Policy</a>,
+      incluyendo los requisitos de <em>Limited Use</em>. Nunca vendemos tus datos de Google,
+      no los usamos para publicidad, no permitimos que humanos los lean salvo con tu
+      consentimiento explícito o cuando sea estrictamente necesario para seguridad o
+      cumplimiento legal, y no los transferimos a terceros salvo lo indispensable para
+      operar el servicio que tú solicitaste.
+    </div>
+
+    <h2>2. Cómo usamos los datos</h2>
+    <ul>
+      <li>Autenticarte y mantener tu sesión activa mediante JWT de acceso corto y <em>refresh tokens</em>.</li>
+      <li>Guardar, mostrar y sincronizar tus eventos, tareas, notas y ajustes.</li>
+      <li>Enviar notificaciones y recordatorios que tú mismo configuras.</li>
+      <li>Importar y opcionalmente sincronizar los eventos de los calendarios de Google que conectes.</li>
+      <li>Detectar abusos, ataques y proteger la integridad del servicio.</li>
+      <li>Enviar correos operacionales (verificación de email, restablecimiento de contraseña, alertas de seguridad).</li>
+    </ul>
+
+    <p>
+      No usamos tus datos para entrenar modelos de inteligencia artificial ni para publicidad
+      dirigida. Kibo no muestra anuncios.
+    </p>
+
+    <h2>3. Base legal (RGPD / LOPDGDD)</h2>
+    <ul>
+      <li><strong>Ejecución de un contrato</strong>: prestarte el servicio que has contratado al crear una cuenta.</li>
+      <li><strong>Consentimiento</strong>: para conectar Google Calendar y para las notificaciones opcionales.</li>
+      <li><strong>Interés legítimo</strong>: seguridad, prevención de fraude y logs mínimos de operación.</li>
+      <li><strong>Obligación legal</strong>: cumplimiento de requerimientos judiciales o fiscales aplicables.</li>
+    </ul>
+
+    <h2>4. Almacenamiento y seguridad</h2>
+    <ul>
+      <li>Toda la comunicación con el API viaja sobre TLS.</li>
+      <li>Las contraseñas se guardan como <em>hash</em> Argon2.</li>
+      <li>Los <em>access tokens</em> y <em>refresh tokens</em> de Google se cifran en reposo en el servidor.</li>
+      <li>Los <em>refresh tokens</em> propios de Kibo rotan en cada uso y disparan una invalidación en cadena si se detecta reuso.</li>
+      <li>Los <em>backups</em> exportables que tú generas desde la app pueden protegerse con <em>passphrase</em> (AES-GCM + Argon2). Kibo no conserva esa <em>passphrase</em>.</li>
+      <li>La app de escritorio aplica una Content Security Policy estricta.</li>
+    </ul>
+
+    <p>
+      Los datos se alojan en proveedores de infraestructura ubicados en la Unión Europea siempre
+      que es posible. Cualquier transferencia a terceros países se realiza con las
+      salvaguardas exigidas por el RGPD.
+    </p>
+
+    <h2>5. Con quién compartimos datos</h2>
+    <p>
+      Kibo <strong>no vende</strong> tus datos personales y no los cede a terceros con fines
+      publicitarios. Solo los compartimos con:
+    </p>
+    <ul>
+      <li>Proveedores de <em>hosting</em>, base de datos y correo transaccional que actúan como <em>encargados de tratamiento</em> bajo contrato.</li>
+      <li>Google, cuando tú inicias voluntariamente el <em>flow</em> de OAuth o de sincronización de calendario.</li>
+      <li>Autoridades competentes cuando exista una obligación legal.</li>
+    </ul>
+
+    <h2>6. Retención</h2>
+    <ul>
+      <li>Mientras la cuenta esté activa, conservamos tus datos.</li>
+      <li>Los elementos en la papelera se eliminan definitivamente según el periodo configurado.</li>
+      <li>Al borrar tu cuenta se eliminan tus datos personales en un plazo máximo de 30 días, salvo los que debamos conservar por obligación legal.</li>
+      <li>Los <em>refresh tokens</em> revocados se marcan como inválidos y se eliminan tras el periodo de análisis de seguridad (máximo 90 días).</li>
+    </ul>
+
+    <h2>7. Tus derechos</h2>
+    <p>Puedes ejercer en cualquier momento tus derechos de:</p>
+    <ul>
+      <li>Acceso, rectificación y supresión.</li>
+      <li>Limitación del tratamiento y oposición.</li>
+      <li>Portabilidad: la app incluye export en JSON y CSV.</li>
+      <li>Revocar el consentimiento a la integración con Google desde
+        <a href="https://myaccount.google.com/permissions" target="_blank" rel="noreferrer">https://myaccount.google.com/permissions</a>
+        o desde <em>Ajustes → Integraciones → Google Calendar → Desvincular</em> dentro de Kibo.
+      </li>
+      <li>Eliminar tu cuenta y todos tus datos desde <em>Ajustes → Zona peligrosa → Eliminar cuenta</em>. La acción borra tu workspace, eventos, tareas, notas, calendarios, tokens de integraciones y sesiones activas, y revoca automáticamente el acceso a Google si estaba conectado.
+      </li>
+      <li>Presentar reclamación ante la Agencia Española de Protección de Datos
+        (<a href="https://www.aepd.es" target="_blank" rel="noreferrer">aepd.es</a>).
+      </li>
+    </ul>
+
+    <p>
+      Escríbenos a <a href="mailto:hello@markox.dev">hello@markox.dev</a> desde el email
+      asociado a tu cuenta y responderemos en un plazo máximo de 30 días.
+    </p>
+
+    <h2>8. Menores</h2>
+    <p>
+      Kibo no está dirigido a menores de 14 años y no recogemos datos deliberadamente de
+      menores. Si detectamos una cuenta de un menor sin autorización parental, la eliminaremos.
+    </p>
+
+    <h2>9. <em>Cookies</em> y almacenamiento local</h2>
+    <p>
+      La versión web utiliza <em>localStorage</em> y <em>cookies</em> estrictamente necesarias
+      para mantener tu sesión, tu tema oscuro/claro y tus preferencias de UI. No usamos
+      <em>cookies</em> de analítica ni de publicidad de terceros.
+    </p>
+
+    <h2>10. Cambios en esta política</h2>
+    <p>
+      Podemos actualizar esta política. Cuando el cambio sea material te avisaremos por email o
+      con un aviso destacado en la app antes de que entre en vigor. La versión vigente estará
+      siempre publicada en esta URL, con la fecha de última actualización visible en la parte
+      superior.
+    </p>
+
+    <h2>11. Contacto</h2>
+    <p>
+      Responsable del tratamiento: <strong>Markox</strong><br />
+      Email: <a href="mailto:hello@markox.dev">hello@markox.dev</a><br />
+      Sitio: <a href="https://kibo.markox.dev">https://kibo.markox.dev</a>
+    </p>
+
+    <footer>
+      © 2026 Kibo · <a href="/terms.html">Condiciones del Servicio</a> · <a href="/">Volver a la app</a>
+    </footer>
+  </body>
+</html>

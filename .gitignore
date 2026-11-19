@@ -1,0 +1,58 @@
+# deps
+node_modules
+.pnpm-store
+
+# builds
+dist
+build
+.next
+out
+.turbo
+*.tsbuildinfo
+
+# tauri
+apps/desktop/src-tauri/target
+apps/desktop/src-tauri/gen
+
+# env
+.env
+.env.local
+.env.*.local
+!.env.example
+.env.production
+.env.*
+!.env.example
+*.pem
+*.key
+*.jks
+*.keystore
+google-services.json
+GoogleService-Info.plist
+*.db
+*.sqlite
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# editor
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea
+*.swp
+.DS_Store
+
+# test
+coverage
+
+# kibo local
+apps/desktop/kibo.db
+apps/desktop/backups
+
+# tauri
+apps/desktop/dist
+
+.serena/
+.claude/

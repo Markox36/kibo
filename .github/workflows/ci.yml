@@ -1,0 +1,41 @@
+name: CI
+
+# Manual-only: typecheck is currently broken repo-wide, so the automatic
+# run on every push always failed. Re-enable push/pull_request when fixed.
+on:
+  workflow_dispatch:
+
+jobs:
+  ci:
+    name: Lint / Typecheck / Test / Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.5.1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Test
+        run: pnpm test
+
+      - name: Build
+        run: pnpm build
+        env:
+          # dummy env for build-time checks
+          MONGODB_URI: mongodb://localhost/kibo_test
+          JWT_SECRET: ci-secret-not-real

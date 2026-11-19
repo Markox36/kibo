@@ -1,0 +1,33 @@
+{
+  "name": "kibo",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "packageManager": "pnpm@11.5.1",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:api": "turbo run dev --filter=@kibo/api",
+    "dev:web": "turbo run dev --filter=@kibo/web",
+    "dev:desktop": "turbo run dev --filter=@kibo/desktop",
+    "dev:app": "turbo run dev --filter=@kibo/api --filter=@kibo/web",
+    "dev:mobile": "pnpm --filter @kibo/mobile start",
+    "mobile:android": "pnpm --filter @kibo/mobile android",
+    "mobile:ios": "pnpm --filter @kibo/mobile ios",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3",
+    "typescript": "^5.6.3",
+    "prettier": "^3.4.2",
+    "eslint": "^9.17.0",
+    "@types/node": "^22.10.5"
+  }
+}

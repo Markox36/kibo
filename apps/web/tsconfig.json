@@ -1,0 +1,13 @@
+{
+  "extends": "@kibo/config/tsconfig.react.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "types": ["vite/client"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*", "vite.config.ts"],
+  "exclude": ["node_modules", "dist"]
+}
